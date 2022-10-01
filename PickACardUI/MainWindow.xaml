@@ -13,11 +13,15 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="20,20,20,20" Grid.RowSpan="2"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="190,60,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="180,84,0,0" VerticalAlignment="Top"/>
-        <Slider HorizontalAlignment="Left" Margin="125,134,0,0" VerticalAlignment="Top" Width="120"/>
+        <ListBox Grid.Column="2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="20,20,20,20" Grid.RowSpan="2"/>
+        <Button Content="Pick some cards" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="20" Height="30" Width="144"/>
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
+            <Label Content="How many cards should I pick?" FontSize="20"/>
+            <Slider Minimum="1" Maximum="15" Foreground="Black" IsSnapToTickEnabled="True" TickPlacement="BottomRight"/>
+    </StackPanel>
+
     </Grid>
 </Window>
