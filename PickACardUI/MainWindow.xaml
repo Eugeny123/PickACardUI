@@ -4,23 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PickACardUI"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" Height="300" Width="800" Title="Card Picker">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="132*"/>
-            <RowDefinition Height="85*"/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="20,20,20,20" Grid.RowSpan="2"/>
-        <Button Content="Pick some cards" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="20" Height="30" Width="144"/>
+        <ListBox x:Name="listOfCards"  Margin="20" Grid.RowSpan="2" FontSize="20" Grid.Column="1"/>
+        <Button Content="Pick some cards" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="20" Height="30" Width="144" Click="Button_Click"/>
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
             <Label Content="How many cards should I pick?" FontSize="20"/>
-            <Slider Minimum="1" Maximum="15" Foreground="Black" IsSnapToTickEnabled="True" TickPlacement="BottomRight"/>
+            <Slider x:Name="numberOfCards" Minimum="1" Maximum="15" IsSnapToTickEnabled="True" TickPlacement="BottomRight"  AutoToolTipPlacement="TopLeft" Foreground="Black"/>
     </StackPanel>
 
     </Grid>
